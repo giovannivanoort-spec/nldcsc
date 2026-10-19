@@ -1,5 +1,10 @@
 # Repository Guide
 
+## Fork Installation
+- This fork preserves Racoon's Viper authentication fixes. Consumers pin a full commit SHA.
+- The private upstream `.agent-standards` submodule is intentionally excluded so Poetry can install this public SDK without GitHub credentials. Do not reintroduce it as an installation requirement.
+- `AGENTS.md` retains the upstream guidance snapshot. Regenerating it with the upstream build script requires a separately available `.agent-standards` directory; the directory is ignored in this fork.
+
 ## Stack And Layout
 - Python 3.10/3.11 package managed with Poetry. `setup.py` derives install extras from the `[tool.nldcsc.group.dependencies]` and `[tool.poetry.group.*]` tables in `pyproject.toml` — a new optional module needs both an entry there and a matching Poetry dependency group.
 - `nldcsc/` contains the installable modules (e.g. `auth`, `loggers`, `flask_managers`, `flask_plugins`, `http_apis`, `httpx_apis`, `plugins`, `sso`, `sql_migrations`, `redis_cache`, `fastapi_cache`, `custom_types`, `datatables`). Each is installed independently via `pip install nldcsc[<module>]`.

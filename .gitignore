@@ -166,3 +166,6 @@ test_env
 mutants/
 .mutmut-cache
 mutmut-cicd-stats.json
+
+# Private upstream development guidance is not part of the installable SDK.
+/.agent-standards/

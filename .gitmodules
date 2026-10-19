@@ -1,3 +1,0 @@
-[submodule ".agent-standards"]
-    path = .agent-standards
-    url = https://github.com/NLDCSC/agent-standards.git
